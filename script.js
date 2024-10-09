@@ -114,3 +114,7 @@ function showSlide(index) {
   slides.forEach((slide) => (slide.style.display = "none"));
   slides[index].style.display = "block";
 }
+document.getElementById("nextSlide").addEventListener("click", () => {
+  currentSlide = (currentSlide + 1) % slides.length;
+  showSlide(currentSlide);
+});
