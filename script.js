@@ -57,3 +57,18 @@ toggleSwitch.addEventListener("change", function () {
     bodyElement.classList.remove("dark-mode");
   }
 });
+// Lightbox functionality for images
+const galleryImages = document.querySelectorAll(".gallery img");
+const lightbox = document.createElement("div");
+lightbox.id = "lightbox";
+document.body.appendChild(lightbox);
+
+galleryImages.forEach((img) => {
+  img.addEventListener("click", function () {
+    lightbox.style.display = "flex";
+    const imgElement = document.createElement("img");
+    imgElement.src = this.src;
+    lightbox.innerHTML = ""; // Clear existing content
+    lightbox.appendChild(imgElement);
+  });
+});
