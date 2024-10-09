@@ -27,3 +27,21 @@ function displayGreeting() {
 }
 
 displayGreeting();
+// Show or hide the "Back to Top" button based on scroll position
+const backToTopButton = document.getElementById("backToTop");
+
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 300) {
+    backToTopButton.style.display = "block";
+  } else {
+    backToTopButton.style.display = "none";
+  }
+});
+
+// Scroll smoothly to the top when the button is clicked
+backToTopButton.addEventListener("click", () => {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  });
+});
