@@ -1,6 +1,4 @@
-# ids-assignment
-# ids-assignment
-assignment1
+
 # Creative Minds Portfolio Website
 
 ## Project Description
