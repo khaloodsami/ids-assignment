@@ -108,3 +108,46 @@ window.addEventListener("resize", () => {
     heroSection.style.height = "500px"; // Default height
   }
 });
+const slides = document.querySelectorAll(".carousel .slide");
+let currentSlide = 0;
+function showSlide(index) {
+  slides.forEach((slide) => (slide.style.display = "none"));
+  slides[index].style.display = "block";
+}
+document.getElementById("nextSlide").addEventListener("click", () => {
+  currentSlide = (currentSlide + 1) % slides.length;
+  showSlide(currentSlide);
+});
+document.getElementById("prevSlide").addEventListener("click", () => {
+  currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+  showSlide(currentSlide);
+});
+
+// Show the first slide initially
+showSlide(currentSlide);
+async function fetchData() {
+  try {
+    const response = await fetch("https://api.example.com/data");
+    const data = await response.json();
+    const dataContainer = document.getElementById("dataContainer");
+    data.forEach((item) => {
+      const div = document.createElement("div");
+      div.textContent = item.name;
+      dataContainer.appendChild(div);
+    });
+  } catch (error) {
+    console.error("Error fetching data:", error);
+  }
+}
+const navToggle = document.getElementById("navToggle");
+const navMenu = document.querySelector("nav ul");
+
+navToggle.addEventListener("click", () => {
+  navMenu.classList.toggle("active");
+});
+const messageInput = document.getElementById("message");
+const charCount = document.getElementById("charCount");
+
+messageInput.addEventListener("input", () => {
+  charCount.textContent = `${messageInput.value.length}/500`; // Assuming 500 is the limit
+});
