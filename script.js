@@ -108,3 +108,5 @@ window.addEventListener("resize", () => {
     heroSection.style.height = "500px"; // Default height
   }
 });
+const slides = document.querySelectorAll(".carousel .slide");
+let currentSlide = 0;
