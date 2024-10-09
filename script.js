@@ -125,3 +125,17 @@ document.getElementById("prevSlide").addEventListener("click", () => {
 
 // Show the first slide initially
 showSlide(currentSlide);
+async function fetchData() {
+  try {
+    const response = await fetch("https://api.example.com/data");
+    const data = await response.json();
+    const dataContainer = document.getElementById("dataContainer");
+    data.forEach((item) => {
+      const div = document.createElement("div");
+      div.textContent = item.name;
+      dataContainer.appendChild(div);
+    });
+  } catch (error) {
+    console.error("Error fetching data:", error);
+  }
+}
