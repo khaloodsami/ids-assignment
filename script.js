@@ -145,3 +145,9 @@ const navMenu = document.querySelector("nav ul");
 navToggle.addEventListener("click", () => {
   navMenu.classList.toggle("active");
 });
+const messageInput = document.getElementById("message");
+const charCount = document.getElementById("charCount");
+
+messageInput.addEventListener("input", () => {
+  charCount.textContent = `${messageInput.value.length}/500`; // Assuming 500 is the limit
+});
