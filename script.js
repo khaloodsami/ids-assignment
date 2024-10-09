@@ -76,3 +76,22 @@ galleryImages.forEach((img) => {
 lightbox.addEventListener("click", function () {
   lightbox.style.display = "none";
 });
+// Simple form validation for contact form
+const form = document.getElementById("contactForm");
+const formMessage = document.getElementById("formMessage");
+
+form.addEventListener("submit", function (e) {
+  e.preventDefault();
+  const name = document.getElementById("name").value;
+  const email = document.getElementById("email").value;
+  const message = document.getElementById("message").value;
+
+  if (!name || !email || !message) {
+    formMessage.textContent = "Please fill out all fields.";
+    formMessage.style.color = "red";
+  } else {
+    formMessage.textContent = "Thank you! Your message has been sent.";
+    formMessage.style.color = "green";
+    form.reset(); // Reset the form fields
+  }
+});
