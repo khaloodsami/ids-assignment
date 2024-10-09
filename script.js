@@ -45,3 +45,14 @@ backToTopButton.addEventListener("click", () => {
     behavior: "smooth",
   });
 });
+// Toggle dark mode on and off
+const toggleSwitch = document.querySelector("#darkModeToggle input");
+const bodyElement = document.body;
+
+toggleSwitch.addEventListener("change", function () {
+  if (this.checked) {
+    bodyElement.classList.add("dark-mode");
+  } else {
+    bodyElement.classList.remove("dark-mode");
+  }
+});
