@@ -98,3 +98,13 @@ form.addEventListener("submit", function (e) {
 // Display current year in footer
 const footerYear = document.getElementById("footerYear");
 footerYear.textContent = new Date().getFullYear();
+
+window.addEventListener("resize", () => {
+  // Example: Adjust the hero section based on the window size
+  const heroSection = document.getElementById("hero");
+  if (window.innerWidth < 768) {
+    heroSection.style.height = "300px"; // Adjust height for smaller screens
+  } else {
+    heroSection.style.height = "500px"; // Default height
+  }
+});
