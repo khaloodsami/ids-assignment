@@ -95,3 +95,6 @@ form.addEventListener("submit", function (e) {
     form.reset(); // Reset the form fields
   }
 });
+// Display current year in footer
+const footerYear = document.getElementById("footerYear");
+footerYear.textContent = new Date().getFullYear();
