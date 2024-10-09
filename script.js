@@ -72,3 +72,7 @@ galleryImages.forEach((img) => {
     lightbox.appendChild(imgElement);
   });
 });
+// Close lightbox on click
+lightbox.addEventListener("click", function () {
+  lightbox.style.display = "none";
+});
