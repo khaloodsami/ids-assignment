@@ -118,3 +118,10 @@ document.getElementById("nextSlide").addEventListener("click", () => {
   currentSlide = (currentSlide + 1) % slides.length;
   showSlide(currentSlide);
 });
+document.getElementById("prevSlide").addEventListener("click", () => {
+  currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+  showSlide(currentSlide);
+});
+
+// Show the first slide initially
+showSlide(currentSlide);
