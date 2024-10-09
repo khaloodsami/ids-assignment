@@ -139,3 +139,9 @@ async function fetchData() {
     console.error("Error fetching data:", error);
   }
 }
+const navToggle = document.getElementById("navToggle");
+const navMenu = document.querySelector("nav ul");
+
+navToggle.addEventListener("click", () => {
+  navMenu.classList.toggle("active");
+});
